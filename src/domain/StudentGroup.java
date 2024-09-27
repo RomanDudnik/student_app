@@ -9,7 +9,7 @@ import java.util.List;
  * Имплементирует интерфейс Iterable
  * Для перебора студентов (делаем класс итерируемым)
  */
-public class StudentGroup implements Iterable<Student> {
+public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>{
 
     /**
      * Поля
@@ -51,17 +51,17 @@ public class StudentGroup implements Iterable<Student> {
         this.id = id;
     }
 
-
     /**
      * Переопределение метода toString
      * @return
      */
     @Override
     public String toString() {
-        return "StudentGroup{" +
-                "listStudents=" + listStudents +
-                ", id=" + id +
-                '}';
+        return "StudentGroup: " +
+                "id=" + id +
+                " amount=" + listStudents.size() + " \n" +
+                " listStudents: " + " \n" + listStudents +
+                '}' + "\n";
     }
 
     /**
@@ -72,5 +72,29 @@ public class StudentGroup implements Iterable<Student> {
     @Override
     public Iterator<Student> iterator() {
         return new StudentIterator(listStudents);
+    }
+
+    /**
+     * Переопределение метода compareTo
+     * Сортировка по количеству студентов в группе
+     * затем по идентификатору
+     * @param o the object to be compared.
+     * @return
+     */
+    @Override
+    public int compareTo(StudentGroup o) {
+//        return Integer.compare(this.listStudents.size(), o.listStudents.size());
+
+        // Сортировка по количеству студентов
+        if (o.listStudents.size() > this.listStudents.size()) {
+            return -1;
+        }
+
+        if (o.listStudents.size() < this.listStudents.size()) {
+            return 1;
+        }
+
+        // Сортировка по идентификатору
+        return Integer.compare(this.getId(), o.getId());
     }
 }

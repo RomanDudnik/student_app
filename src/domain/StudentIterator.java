@@ -37,6 +37,7 @@ public class StudentIterator implements Iterator<Student> {
      */
     @Override
     public boolean hasNext() {
+        // Проверка наличия следующего элемента
         return count < listStudents.size();
     }
 

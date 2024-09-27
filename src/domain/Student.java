@@ -53,6 +53,7 @@ public class Student extends Person implements Comparable<Student> {
     /**
      * Переопределение метода compareTo
      * Для сортировки
+     * по возрасту и идентификатору
      * @param o
      * @return
      */
@@ -70,14 +71,7 @@ public class Student extends Person implements Comparable<Student> {
             return 1;
         }
         // Сортировка по идентификатору
-        if (o.getId() > id) {
-            return -1;
-        }
+        return Integer.compare(id, o.getId());
 
-        if (o.getId() < id) {
-            return 1;
-        }
-
-        return 0;
     }
 }
