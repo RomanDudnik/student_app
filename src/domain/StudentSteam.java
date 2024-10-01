@@ -19,14 +19,14 @@ public class StudentSteam implements Iterable<StudentGroup> {
     private int id;
 
     // список групп в потоке
-    private List<StudentGroup> listStudentGroups = new ArrayList<>();
+    private List<StudentGroup> studentSteam = new ArrayList<>();
 
     /**
      * Конструктор
      * @param listStudentGroups
      */
     public StudentSteam(List<StudentGroup> listStudentGroups, int id) {
-        this.listStudentGroups = listStudentGroups;
+        this.studentSteam = listStudentGroups;
         this.id = id;
     }
 
@@ -44,11 +44,11 @@ public class StudentSteam implements Iterable<StudentGroup> {
     }
 
     public List<StudentGroup> getListStudentGroups() {
-        return listStudentGroups;
+        return studentSteam;
     }
 
     public void setListStudentGroups(List<StudentGroup> listStudentGroups) {
-        this.listStudentGroups = listStudentGroups;
+        this.studentSteam = listStudentGroups;
     }
 
     /**
@@ -58,8 +58,8 @@ public class StudentSteam implements Iterable<StudentGroup> {
     @Override
     public String toString() {
         return "StudentSteam: " +
-                "id=" + id +
-                " listStudentGroups: " + " \n" + listStudentGroups +
+                "id=" + id + " amount groups=" + studentSteam.size() +
+                " studentSteam: " + " \n" + studentSteam +
                 '}';
     }
 
@@ -70,6 +70,6 @@ public class StudentSteam implements Iterable<StudentGroup> {
      */
     @Override
     public Iterator<StudentGroup> iterator() {
-        return new GroupIterator(listStudentGroups);
+        return new GroupIterator(studentSteam);
     }
 }

@@ -59,7 +59,7 @@ public class StudentGroup implements Iterable<Student>, Comparable<StudentGroup>
     public String toString() {
         return "StudentGroup: " +
                 "id=" + id +
-                " amount=" + listStudents.size() + " \n" +
+                " amount students=" + listStudents.size() + " \n" +
                 " listStudents: " + " \n" + listStudents +
                 '}' + "\n";
     }
