@@ -3,7 +3,7 @@ package domain;
 /**
  * Класс учитель
  */
-public class Teacher extends Person {
+public class Teacher extends Worker {
 
     /**
      * Поле
@@ -21,4 +21,5 @@ public class Teacher extends Person {
         super(name, age);
         this.academicDegree = academicDegree;
     }
+
 }

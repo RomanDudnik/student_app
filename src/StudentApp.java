@@ -1,6 +1,5 @@
-import domain.Student;
-import domain.StudentGroup;
-import domain.StudentSteam;
+import controllers.AccountController;
+import domain.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -139,6 +138,16 @@ public class StudentApp {
 
         // Вывод на консоль потока после сортировки
         System.out.println(studentSteam);
-    }
 
+        // Создание учителя
+        Teacher teacher1 = new Teacher("Иванов И.И.", 50, "Доцент");
+        // Создание сотрудника
+        Employee employee1 = new Employee("Петров П.П.", 35, "Дворник");
+
+        // Создание контроллера
+        AccountController controller = new AccountController();
+        // Оплата зарплат
+        controller.paySalary(teacher1, 50000);
+        controller.paySalary(employee1, 25000);
+    }
 }

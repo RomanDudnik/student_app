@@ -3,7 +3,7 @@ package domain;
 /**
  * Класс сотрудник
  */
-public class Employee extends Person {
+public class Employee extends Worker {
 
     /**
      * Поле

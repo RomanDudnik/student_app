@@ -1,6 +1,7 @@
 package services;
 
 import domain.Employee;
+import domain.PersonComporator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,5 +47,16 @@ public class EmployeeService implements iPersonService<Employee> {
         count++;
         // добавление в список
         employees.add(employee);
+    }
+
+    /**
+     * сортировка по ФИО
+     * c помощью обобщенного компоратора PersonComporator
+     */
+    public void sortByFIO() {
+        // создание компоратора для сотрудников
+        PersonComporator<Employee> comporator = new PersonComporator<>();
+        // сортировка по ФИО
+        employees.sort(comporator);
     }
 }
