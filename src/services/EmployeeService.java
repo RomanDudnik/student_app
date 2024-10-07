@@ -21,6 +21,8 @@ public class EmployeeService implements iPersonService<Employee> {
 
     /**
      * Конструктор
+     * без параметров
+     * создание пустого списка
      */
     public EmployeeService() {
         employees = new ArrayList<>();
@@ -50,7 +52,7 @@ public class EmployeeService implements iPersonService<Employee> {
     }
 
     /**
-     * сортировка по ФИО
+     * Cортировка по ФИО
      * c помощью обобщенного компоратора PersonComporator
      */
     public void sortByFIO() {

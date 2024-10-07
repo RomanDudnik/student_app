@@ -1,53 +1,48 @@
 package services;
 
 import domain.PersonComporator;
-import domain.Student;
+import domain.Teacher;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Сервис для работы со студентами
- */
-public class StudentService implements iPersonService<Student> {
+public class TeacherService implements iPersonService<Teacher> {
 
     /**
      * Поля
      */
-    // количество студентов
+    // Количество учителей
     private int count;
-    // список студентов
-    private List<Student> students;
+    // Список учителей
+    private List<Teacher> teachers;
 
     /**
      * Конструктор
      * без параметров
      * создание пустого списка
      */
-    public StudentService() {
-        students = new ArrayList<>();
+    public TeacherService() {
+        teachers = new ArrayList<>();
     }
 
     /**
      * Переопределение методов интерфейса iPersonService
      * @return
      */
-
-    // получение всех студентов
+    // получение списка учителей
     @Override
-    public List<Student> getAll() {
-        return students;
+    public List<Teacher> getAll() {
+        return teachers;
     }
-
-    // создание студента (регистрация студента)
+    // создание учителя
     @Override
     public void create(String name, int age) {
-        // создание нового студента
-        Student student = new Student(name, age);
+        // создание нового учителя
+        Teacher teacher = new Teacher(name, age, "учитель");
         // увеличение счетчика
         count++;
         // добавление в список
-        students.add(student);
+        teachers.add(teacher);
         // сортировка по ФИО
         sortByFIO();
     }
@@ -57,9 +52,11 @@ public class StudentService implements iPersonService<Student> {
      * c помощью обобщенного компоратора PersonComporator
      */
     public void sortByFIO() {
-        // создание компоратора для студентов
-        PersonComporator<Student> comporator = new PersonComporator<>();
+        // создание компоратора для учителей
+        PersonComporator<Teacher> comporator = new PersonComporator<>();
         // сортировка по ФИО
-        students.sort(comporator);
+        teachers.sort(comporator);
     }
+
+
 }
