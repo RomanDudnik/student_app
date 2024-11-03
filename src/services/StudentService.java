@@ -38,7 +38,6 @@ public class StudentService implements iPersonService<Student> {
     public List<Student> getAll() {
         return students;
     }
-
     // создание студента (регистрация студента)
     @Override
     public void create(String name, int age) {

@@ -3,13 +3,21 @@ package services;
 import java.util.List;
 
 /**
- * Обобщенный интерфейс(дженерик) для сервиса
+ * Обобщенный интерфейс(iGeneric) для сервиса
  * @param <T>
  */
 public interface iPersonService<T> {
 
-    // получение всех сущностей
+    /**
+     * Получение всех сущностей
+     * @return
+     */
     List<T> getAll();
-    // создание сущности (регистрация сотрудника)
+
+    /**
+     * Создание сущности (регистрация сотрудника)
+     * @param name
+     * @param age
+     */
     void create(String name, int age);
 }

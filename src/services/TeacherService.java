@@ -57,6 +57,4 @@ public class TeacherService implements iPersonService<Teacher> {
         // сортировка по ФИО
         teachers.sort(comporator);
     }
-
-
 }

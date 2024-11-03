@@ -19,7 +19,7 @@ public class StudentSteam implements Iterable<StudentGroup> {
     private int id;
 
     // список групп в потоке
-    private List<StudentGroup> studentSteam = new ArrayList<>();
+    private List<StudentGroup> studentSteam;
 
     /**
      * Конструктор
